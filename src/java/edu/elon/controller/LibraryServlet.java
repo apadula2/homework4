@@ -41,10 +41,11 @@ public class LibraryServlet extends HttpServlet {
       url= "/main.jsp";
     }
     else if (action.equals("checkout")) {
-      String name = request.getParameter("firstName") + " " + request.getParameter("lastName");
+      String firstName = request.getParameter("firstName");
+      String lastName=request.getParameter("lastName");
       String email = request.getParameter("email");
       String title = request.getParameter("book");
-      Person user = new Person(name, email, title, null, null);
+      Person user = new Person(firstName,lastName, email, title, null, null);
       UserDB.insert(user);
       request.setAttribute("title", title);
       Date date = new Date();

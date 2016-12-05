@@ -14,9 +14,6 @@ public class UserDB {
 
     public static int insert(Person user) {
         ConnectionPool pool = ConnectionPool.getInstance();
-        if(pool==null){
-          System.out.println("empty pool");
-        }
         Connection connection = pool.getConnection();
         if(connection==null){
           System.out.println("connection is null");
@@ -24,20 +21,21 @@ public class UserDB {
         PreparedStatement ps = null;
 
         String query
-                = "INSERT INTO LibraryUsers (Name, Email, Title, DueDate)"
-                + "VALUES (?, ?, ?, ?)";
+                = "INSERT INTO LibraryUsers (FirstName,LastName, Email, Title, DueDate)"
+                + "VALUES (?, ?, ?, ?,?)";
         try {
             ps = connection.prepareStatement(query);
-            ps.setString(1, user.getName());
-            ps.setString(2, user.getEmail());
-            ps.setString(3, user.getTitle());
+            ps.setString(1, user.getFirstName());
+            ps.setString(2,user.getLastName());
+            ps.setString(3, user.getEmail());
+            ps.setString(4, user.getTitle());
             Date d = new Date();
             Calendar c = Calendar.getInstance();
             c.setTime(d);
             c.add(Calendar.WEEK_OF_MONTH,2);
             d=c.getTime();
             java.sql.Date date = new java.sql.Date(d.getTime());
-            ps.setDate(4,date);
+            ps.setDate(5,date);
             return ps.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
@@ -90,7 +88,8 @@ public class UserDB {
             while(rs.next()){
              
                 Person user = new Person();
-                user.setName(rs.getString("Name"));
+                user.setFirstName(rs.getString("FirstName"));
+                user.setLastName(rs.getString("LastName"));
                 user.setTitle(rs.getString("Title"));
                 user.setEmail(rs.getString("Email"));
                 SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");

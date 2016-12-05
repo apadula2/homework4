@@ -6,14 +6,16 @@ import java.io.Serializable;
 
 public class Person implements Serializable {
 
-  private String name;
+  private String firstName;
+  private String lastName;
   private String email;
   private String title;
   private String dueDate;
   private String overdue;
 
   public Person() {
-    name = "";
+    firstName = "";
+    lastName= "";
     email = "";
     title = "";
     dueDate = "";
@@ -21,20 +23,28 @@ public class Person implements Serializable {
 
   }
 
-  public Person(String name, String email, String title, String dueDate, String overdue) {
-    this.name = name;
+  public Person(String firstName,String lastName, String email, String title, String dueDate, String overdue) {
+    this.firstName = firstName;
+    this.lastName = lastName;
     this.email = email;
     this.title = title;
     this.dueDate = dueDate;
     this.overdue = overdue;
   }
 
-  public String getName() {
-    return name;
+  public String getFirstName() {
+    return firstName;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+   public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
   }
 
   public String getEmail() {

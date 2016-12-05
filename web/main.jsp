@@ -9,14 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="styles/main.css" type="text/css"/>
         <title>Main page</title>
     </head>
     <body>
         <%@include file="includes/header.html"%>
-        <section>
+        <section id="mainSection">
             <a href="checkout.jsp" title="Checkout Book"> Check out a book </a><br>
             <a href="library?action=manage"  title="Manage Books"> Manage checked out books</a>
-        <section>
+        </section>
         <%@include file="includes/footer.html"%>
     </body>
 </html>

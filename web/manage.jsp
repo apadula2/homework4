@@ -24,7 +24,7 @@
               <th>Overdue</th>
               <c:forEach items="${users}" var="user">
                 <tr>
-                  <td>${user.name}</td>
+                  <td>${user.firstName} ${user.lastName}</td>
                   <td>${user.email}</td>
                   <td>${user.title}</td>
                   <td>${user.dueDate}</td>
