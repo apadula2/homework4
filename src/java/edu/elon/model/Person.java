@@ -1,3 +1,5 @@
+
+//CopyRight:Alexis Padula and Sean Webber
 package edu.elon.model;
 
 import java.io.Serializable;

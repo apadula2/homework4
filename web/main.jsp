@@ -15,7 +15,7 @@
         <%@include file="includes/header.html"%>
         <section>
             <a href="checkout.jsp" title="Checkout Book"> Check out a book </a><br>
-            <a href="manage.jsp" title="Manage Books"> Manage checked out books</a>
+            <a href="library?action=manage"  title="Manage Books"> Manage checked out books</a>
         <section>
         <%@include file="includes/footer.html"%>
     </body>

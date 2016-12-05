@@ -15,11 +15,11 @@
         <%@include file="includes/header.html"%>
         <section>
             <p>Thank you for your patronage of the Belk Libary. 
-                You've successfully checked out the book,${person.title} . 
-                Please note that this book is due back on ${person.dueDate} . 
+                You've successfully checked out the book,${title} . 
+                Please note that this book is due back on ${date} . 
                 A friendly reminder will be sent to you 
                 if your book become overdue</p>
-            <a href="libary" title="back to main"> Return to front page </a>
+            <a href="library" title="back to main"> Return to front page </a>
         <section>
         <%@include file="includes/footer.html"%>
     </body>

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : Checkout Form 
+    Document   : Manage
     Created on : Nov 27, 2016, 1:11:04 PM
     Author     : Alexis Padula and Sean Webber
 --%>
@@ -22,25 +22,25 @@
               <th>Book Title</th>
               <th>Due Date</th>
               <th>Overdue</th>
-            <select>
-              <c:forEach items="${people}" var="case">
+              <c:forEach items="${users}" var="user">
                 <tr>
-                  <td>${case.name}</td>
-                  <td>${case.email}</td>
-                  <td>${case.book}</td>
-                  <td>${case.dueDate}</td>
+                  <td>${user.name}</td>
+                  <td>${user.email}</td>
+                  <td>${user.title}</td>
+                  <td>${user.dueDate}</td>
                       <td>
                         <form action="library" method="post">
-                           <input type="hidden" name="action" value="delete"> 
+                           <input type="hidden" name="action" value="delete">
+                           <input type="hidden" name="email" value="${user.email}">
+                            <input type="hidden" name="title" value="${user.title}">
                           <input type="submit" name="checkIn" value="Check-In">
                         </form>
                       </td>
                 </tr>
               </c:forEach>
-            </select>
-            </tr>
-                    
-        <section>
+            </tr> 
+            <a href="main.jsp" title="return"> Return to front page </a><br>
+            </section>
         <%@include file="includes/footer.html"%>
     </body>
 </html>
