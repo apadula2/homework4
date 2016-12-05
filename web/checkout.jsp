@@ -15,7 +15,8 @@
         <%@include file="includes/header.html"%>
         <section>
             <h2>Checkout</h2>
-            <form action="checkoutBook" method="post">
+            <form action="library" method="post">
+                <input type="hidden" name="action" value="checkout"> 
                 <label> First Name: </label>
                 <input type="text" name="firstName" required><br>
                 <label> Last Name: </label>
