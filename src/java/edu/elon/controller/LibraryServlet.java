@@ -34,18 +34,17 @@ public class LibraryServlet extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
     String url = "/main.jsp";
-    
+
     String action = request.getParameter("action");
-    
-    if(action==null){
-      url= "/main.jsp";
-    }
-    else if (action.equals("checkout")) {
+
+    if (action == null) {
+      url = "/main.jsp";
+    } else if (action.equals("checkout")) {
       String firstName = request.getParameter("firstName");
-      String lastName=request.getParameter("lastName");
+      String lastName = request.getParameter("lastName");
       String email = request.getParameter("email");
       String title = request.getParameter("book");
-      Person user = new Person(firstName,lastName, email, title, null, null);
+      Person user = new Person(firstName, lastName, email, title, null, null);
       UserDB.insert(user);
       request.setAttribute("title", title);
       Date date = new Date();
@@ -57,23 +56,18 @@ public class LibraryServlet extends HttpServlet {
       String formatDate = sdf.format(date);
       request.setAttribute("date", formatDate);
       url = "/finalCheckout.jsp";
-    }
-    
-    else if(action.equals("manage")){
-      request.setAttribute("users",UserDB.selectUsers());
-      
-      url="/manage.jsp";
-    }
-    
-    else if(action.equals("delete")){
-      UserDB.delete(request.getParameter("email"),request.getParameter("title") );
-      request.setAttribute("users",UserDB.selectUsers());
-      url="/manage.jsp";
+    } else if (action.equals("manage")) {
+      request.setAttribute("users", UserDB.selectUsers());
+
+      url = "/manage.jsp";
+    } else if (action.equals("delete")) {
+      UserDB.delete(request.getParameter("email"), request.getParameter("title"));
+      request.setAttribute("users", UserDB.selectUsers());
+      url = "/manage.jsp";
     }
     getServletContext()
-      .getRequestDispatcher(url)
-      .forward(request, response);
-  
+            .getRequestDispatcher(url)
+            .forward(request, response);
 
   }
 
@@ -117,4 +111,3 @@ public class LibraryServlet extends HttpServlet {
   }// </editor-fold>
 
 }
-

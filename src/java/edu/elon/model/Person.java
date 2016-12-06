@@ -1,4 +1,3 @@
-
 //CopyRight:Alexis Padula and Sean Webber
 package edu.elon.model;
 
@@ -15,7 +14,7 @@ public class Person implements Serializable {
 
   public Person() {
     firstName = "";
-    lastName= "";
+    lastName = "";
     email = "";
     title = "";
     dueDate = "";
@@ -23,7 +22,7 @@ public class Person implements Serializable {
 
   }
 
-  public Person(String firstName,String lastName, String email, String title, String dueDate, String overdue) {
+  public Person(String firstName, String lastName, String email, String title, String dueDate, String overdue) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
@@ -39,7 +38,8 @@ public class Person implements Serializable {
   public void setFirstName(String firstName) {
     this.firstName = firstName;
   }
-   public String getLastName() {
+
+  public String getLastName() {
     return lastName;
   }
 
