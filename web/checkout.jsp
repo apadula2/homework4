@@ -14,7 +14,7 @@
     </head>
     <body>
         <%@include file="includes/header.html"%>
-        <section>
+        <section id="mainSection">
             <h2>Checkout</h2>
             <form action="library" method="post">
                 <input type="hidden" name="action" value="checkout"> 
@@ -33,3 +33,7 @@
         <%@include file="includes/footer.html"%>
     </body>
 </html>
+
+
+
+

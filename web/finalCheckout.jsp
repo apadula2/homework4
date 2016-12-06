@@ -14,7 +14,7 @@
     </head>
     <body>
         <%@include file="includes/header.html"%>
-        <section>
+        <section id="mainSection">
             <p>Thank you for your patronage of the Belk Libary. 
                 You've successfully checked out the book,${title} . 
                 Please note that this book is due back on ${date} . 
